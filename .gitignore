@@ -1,0 +1,7 @@
+mails/
+db.sqlite3
+venv/
+media/
+*.pyc
+*.pyo
+.idea/

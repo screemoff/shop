@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'header.css' %}" type="text/css">
+    <meta charset="UTF-8">
+    <title>Item</title>
+</head>
+<body>
+{% block header %}
+{% include 'shop/header.html' %}
+{% endblock %}
+<p align="center"><h2 align="center">{{ item.title }}</h2></p>
+<p align="center"><img src="{{ item.image.url }}" width="300"></p>
+<p align="center">{{ item.description }}</p>
+<p align="center">{{ item.price }}$</p>
+{% block write %}
+
+{% endblock %}
+<hr />
+{% block user %}
+
+{% endblock %}
+</body>
+</html>

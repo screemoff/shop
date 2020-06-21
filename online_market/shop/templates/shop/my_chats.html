@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'header.css' %}" type="text/css">
+    <meta charset="UTF-8">
+    <title>My chats</title>
+</head>
+<body>
+{% include 'shop/header_auth.html' %}
+<h1 align="center">Мои чаты</h1>
+{% for chat in chats_from_me %}
+<p><a href="{% url 'chat_view' %}?chat_pk={{ chat.pk }}">{{ chat.user_to.username }}</a> <a href="{% url 'delete_chat' %}?chat_pk={{ chat.pk }}">Удалить чат</a></p>
+{% endfor %}
+{% for chat in chats_to_me %}
+<p><a href="{% url 'chat_view' %}?chat_pk={{ chat.pk }}">{{ chat.user_from.username }}</a> <a href="{% url 'delete_chat' %}?chat_pk={{ chat.pk }}">Удалить чат</a></p>
+{% endfor %}
+</body>
+</html>

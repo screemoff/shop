@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'auth2.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'header.css' %}" type="text/css">
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+{% include 'shop/header_auth.html' %}
+{% else %}
+{% include 'shop/header.html' %}
+{% endif %}
+<form action="{% url 'search' %}" method="POST">
+    {% csrf_token %}
+    <div class="container">
+        {{ form.title }}
+    </div>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>

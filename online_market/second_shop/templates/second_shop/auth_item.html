@@ -1,0 +1,8 @@
+{% extends "second_shop/item.html" %}
+{% load static %}
+{% block write %}
+<p><a href="{% url 'write_to_owner' %}?item_pk={{ item.pk }}" class="btn btn-primary">Написать продавцу</a></p>
+{% endblock %}
+{% block header %}
+{% include 'shop/header_auth.html' %}
+{% endblock %}

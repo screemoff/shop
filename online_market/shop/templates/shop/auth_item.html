@@ -1,0 +1,9 @@
+{% extends 'shop/item.html' %}
+
+{% block header %}
+{% include 'shop/header_auth.html' %}
+{% endblock %}
+
+{% block user %}
+<p align="center"><a class="btn btn-primary" href="{% url 'add_trash' %}?item_pk={{ object.pk }}">Добавить в корзину</a></p>
+{% endblock %}

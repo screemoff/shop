@@ -1,0 +1,12 @@
+{% load static %}
+<header>
+    <div align="left" class="title"><img src="{% static 'images/logo.png' %}"> apples.com</div>
+    <ul class="hr">
+        <li><a class="btn2" href="{% url 'shop_main' %}">Магазин</a></li>
+        <li><a class="btn2" href="{% url 'second_shop' %}">Барахолка</a></li>
+    </ul>
+    <div style="position: absolute; top: 21px; right: 30px;">{{ user.username }} <a class="btn2" href="{% url 'profile' %}">Профиль</a></div>
+</header>
+<br />
+<br />
+<br />

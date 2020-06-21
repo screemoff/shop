@@ -1,0 +1,72 @@
+header {
+    width: 100%;
+    background: #6d6d6d;
+    height: 70px;
+    position: fixed;
+}
+
+.title {
+    color: #f7fafa;
+    font-size: 36px;
+    margin-left: 100px;
+}
+
+ul.hr li {
+    display: inline; /* Отображать как строчный элемент */
+    margin-right: 5px; /* Отступ слева */
+    margin-left:15px;
+    border: 1px;
+    padding: 3px; /* Поля вокруг текста */
+    font-size: 22px;
+}
+
+.hr {
+ list-style: none;
+ position: absolute;
+ top: 20px;
+ right: 700px;
+}
+
+.link {
+    color: black;
+}
+
+.link:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.block:hover {
+  text-decoration: none;
+  color: black;
+  box-shadow: 10px 10px 10px 10px rgba(15,15,15,.5);
+}
+
+.block {
+  width: 200px;
+  height: 100%;
+  transition: all 1s ease;
+  color: black;
+}
+
+.block {
+    display: inline; /* Отображать как строчный элемент */
+}
+
+.btn2 {
+  background-color: #6d6d6d;
+  border: none;
+  color: white;
+  padding: 16px 2px;
+  text-align: center;
+  font-size: 20px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.btn2:hover {
+    text-decoration: none;
+    color: black;
+    }

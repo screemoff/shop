@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'auth2.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'header.css' %}" type="text/css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'shop/header.html' %}
+<p><h2 align="center">Авторизация</h2></p>
+<form action="{% url 'auth' %}" method="post">
+    {% csrf_token %}
+    <div class="container">
+
+    {{ form.username }}
+
+
+    {{ form.password }}
+    {% if error %}
+        <p style="color: red">{{ error }}</p>
+    {% endif %}
+
+    <button type="submit">Login</button>
+    </div>
+</form>
+<p><a class="btn btn-primary" href="{% url 'register' %}">Регистрация</a></p>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'header.css' %}" type="text/css">
+    <meta charset="UTF-8">
+    <title>Iphones</title>
+</head>
+<body>
+{% block header %}
+{% include 'shop/header.html' %}
+{% endblock %}
+{% for item in items %}
+<h3 align="center">{{ item.title }}</h3>
+<br />
+<p align="center"><img class="image" src="{{ item.image.url }}"></p>
+<br />
+<p align="center"><a class="btn btn-primary" href="{% url 'item_detail' item.pk %}">Подробнее</a></p>
+<hr />
+{% endfor %}
+</body>
+</html>

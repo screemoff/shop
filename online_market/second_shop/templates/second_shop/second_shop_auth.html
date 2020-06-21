@@ -1,0 +1,21 @@
+{% extends "second_shop/second_shop_base.html" %}
+{% load static %}
+
+{% block header %}
+{% include 'shop/header_auth.html' %}
+{% endblock %}
+{% block item %}
+{% for item in items %}
+{% if item.image %}
+<p align="center"><h3 align="center">{{ item.title }}</h3></p>
+<p align="center"><a href="{% url 'second_shop_item' item.pk %}"><img class="image" src="{{ item.image.url }}" width="300"></a></p>
+<p align="center"><h4 align="center">Цена: {{ item.price }}$</h4></p>
+{% else %}
+<p align="center"><a href="{% url 'second_shop_item' item.pk %}"><h3 align="center">{{ item.title }}</h3></a></p>
+{% endif %}
+<hr />
+{% endfor %}
+{% endblock %}
+{% block user %}
+<p><a class="btn btn-secondary" href="{% url 'add_second_shop' %}">Добавить товар</a></p>
+{% endblock %}

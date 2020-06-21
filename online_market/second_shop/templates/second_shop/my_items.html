@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'image.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'header.css' %}" type="text/css">
+    <meta charset="UTF-8">
+    <title>My items</title>
+</head>
+<body>
+{% include 'shop/header_auth.html' %}
+<h2 align="center">Мои товары</h2>
+<hr />
+<hr />
+{% for object in object_list %}
+{% if object.image %}
+<p align="center"><h3 align="center">{{ object.title }}</h3></p>
+<p align="center"><a href="{% url 'second_shop_item' object.pk %}"><img class="image" src="{{ object.image.url }}" height="380" width="300"></a>
+<p><a style="margin-left: 20px" class="btn btn-warning" href="{% url 'delete_myitem' %}?item_pk={{ object.pk }}">Удалить</a>
+    <a style="margin-left: 10px" class="btn btn-primary" href="{% url 'change_myitem' %}?item_pk={{ object.pk }}">Редактировать</a></p>
+{% else %}
+<p align="center"><a href="{% url 'second_shop_item' object.pk %}"><h3 align="center">{{ object.title }}</h3></a></p>
+<p><a style="margin-left: 20px" class="btn btn-warning" href="{% url 'delete_myitem' %}?item_pk={{ object.pk }}">Удалить</a>
+    <a style="margin-left: 10px" class="btn btn-primary" href="{% url 'change_myitem' %}?item_pk={{ object.pk }}">Редактировать</a></p>
+{% endif %}
+<hr />
+{% endfor %}
+</body>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'auth2.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'header.css' %}" type="text/css">
+    <meta charset="UTF-8">
+    <title>Add</title>
+</head>
+<body>
+{% include 'shop/header_auth.html' %}
+<form action="{% url 'add_second_shop' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container">
+        {{ form.title }}
+        {{ form.description }}
+        <p>{{ form.price }}</p>
+        <p>{{ form.category.label_tag }} {{ form.category }}</p>
+        <p>{{ form.image.label_tag }} {{ form.image }}</p>
+    </div>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>

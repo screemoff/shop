@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'image.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'header.css' %}" type="text/css">
+    <meta charset="UTF-8">
+    <title>Shop</title>
+</head>
+<body>
+{% block user %}
+{% include 'shop/header.html' %}
+<p align="center"><a href="{% url 'category' %}?category=iphone"><img class="image" src="{% static 'images/iphone.png' %}"></a></p>
+<br />
+<p align="center"><h3 align="center">IPhone</h3></p>
+<p align="center"><a href="{% url 'category' %}?category=ipad"><img class="image" src="{% static 'images/ipad.png' %}"></a></p>
+<p align="center"><h3 align="center">IPad</h3></p>
+<p align="center"><a href="{% url 'category' %}?category=mac"><img class="image" src="{% static 'images/macbook.png' %}"></a></p>
+<p align="center"><h3 align="center">MacBook</h3></p>
+<br />
+<p align="center"><a href="{% url 'category' %}?category=airpods"><img class="image" src="{% static 'images/airpods.jpeg' %}"></a></p>
+<p align="center"><h3 align="center">AirPods</h3></p>
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'header.css' %}" type="text/css">
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+{% include 'shop/header_auth.html' %}
+<p align="center">Никнейм: {{ user.username }}</p>
+<p align="center">Имя: {{ user.first_name }}</p>
+<p align="center">Фамилия: {{ user.last_name }}</p>
+<p align="center">Деньги на счету: {{ user.money }}$</p>
+<p align="center">Email: {{ user.email }}$</p>
+<br />
+<p align="center"><a class="btn btn-primary" href="{% url 'trash' %}">Моя корзина</a></p>
+<p align="center"><a class="btn btn-primary" href="{% url 'add_money' %}">Пополнить счет</a></p>
+<p align="center"><a class="btn btn-warning" href="{% url 'delete_profile' %}">Удалить профиль</a></p>
+<p align="center"><a class="btn btn-primary" href="{% url 'my_items' %}">Мои товары</a></p>
+<p align="center"><a class="btn btn-primary" href="{% url 'my_chats' %}">Мои чаты</a></p>
+<p align="center"><a class="btn btn-primary" href="{% url 'auth_out' %}">Выйти</a></p>
+</body>
+</html>

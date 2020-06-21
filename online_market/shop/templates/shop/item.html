@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'header.css' %}" type="text/css">
+    <meta charset="UTF-8">
+    <title>Item</title>
+</head>
+<body>
+{% block header %}
+{% include 'shop/header.html' %}
+{% endblock %}
+<h3 align="center">{{ object.title }}</h3>
+<p align="center"><img src="{{ object.image.url }}"></p>
+<p align="center">{{ object.description }}</p>
+<p align="center">Цена: {{ object.price }}$</p>
+{% block user %}
+{% endblock %}
+</body>
+</html>

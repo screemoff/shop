@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'image.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'header.css' %}" type="text/css">
+    <meta charset="UTF-8">
+    <title>Trash</title>
+</head>
+<body>
+{% include 'shop/header_auth.html' %}
+{% block money %}
+
+{% endblock %}
+{% for item in items %}
+<h3 align="center">{{ item.title }}</h3>
+<p align="center"><a href="{% url 'item_detail' item.pk %}"><img class="image" src="{{ item.image.url }}"></a></p>
+<p align="center">Цена: {{ item.price }}$</p>
+<div class="container">
+<a class="btn btn-primary" href="{% url 'buy_item' %}?item_pk={{ item.pk }}">Купить</a>
+<a class="btn btn-secondary" href="{% url 'delete_item' %}?item_pk= {{ item.pk }}">Удалить из корзины</a>
+</div>
+<hr />
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends "shop/base_shop.html" %}
+{% load static %}
+{% block user %}
+{% include 'shop/header_auth.html' %}
+<p align="center"><a href="{% url 'category' %}?category=iphone"><img class="image" src="{% static 'images/iphone.png' %}"></a></p>
+<br />
+<p align="center"><h3 align="center">IPhone</h3></p>
+<p align="center"><a href="{% url 'category' %}?category=ipad"><img class="image" src="{% static 'images/ipad.png' %}"></a></p>
+<p align="center"><h3 align="center">IPad</h3></p>
+<p align="center"><a href="{% url 'category' %}?category=mac"><img class="image" src="{% static 'images/macbook.png' %}"></a></p>
+<p align="center"><h3 align="center">MacBook</h3></p>
+<p align="center"><a href="{% url 'category' %}?category=airpods"><img class="image" src="{% static 'images/airpods.jpeg' %}"></a></p>
+<p align="center"><h3 align="center">AirPods</h3></p>
+<hr />
+{% endblock %}

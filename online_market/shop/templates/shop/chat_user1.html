@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'header.css' %}" type="text/css">
+    <meta charset="UTF-8">
+    <title>Chat</title>
+</head>
+<body>
+{% include 'shop/header_auth.html' %}
+<br />
+<br />
+<br />
+{% for message in messages %}
+{% if message.user == user %}
+<p align="right">{{ message.text }}</p>
+<p align="right" style="color:red">{{ message.user.username }}</p>
+<hr />
+{% else %}
+<p align="left">{{ message.text }}</p>
+<p align="left" style="color:blue">{{ message.user.username }}</p>
+<hr />
+{% endif %}
+{% endfor %}
+<form action="{% url 'chat_view' %}?chat_pk={{ chat.pk }}" method="POST">
+    {% csrf_token %}
+    <div class="container">
+        <p align="center">{{ form.text }}</p>
+        <p align="center"><button type="submit">Отправить</button></p>
+    </div>
+</form>
+</body>
+</html>
